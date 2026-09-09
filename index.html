@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHANESHKUMAR S | Aerospace Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of DHANESHKUMAR S, B.Tech Aerospace Engineering student at VIT Bhopal. Specializing in Autodesk Fusion 360, CAD/3D Modelling, UAV/Drone Design, Aerospace Fundamentals, and Python.">
+  <meta name="keywords" content="DHANESHKUMAR S, Aerospace Engineering, VIT Bhopal, Autodesk Fusion 360, CAD, 3D Modelling, UAV, Drone Design, Aerospace Intern">
+  <meta name="author" content="DHANESHKUMAR S">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Floating Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-code">&lt;</span><span class="brand-name" data-editable="brandName">DHANESH.aero</span><span class="brand-code">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="12" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <!-- Resume Button -->
+        <a href="assets/resume.html" target="_blank" class="btn btn-outline btn-sm">
+          <span>Resume</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+
+        <!-- Host Login Button -->
+        <button id="hostLoginTrigger" class="btn btn-primary btn-sm host-trigger-btn" title="Host Login (Restricted to DHANESHKUMAR S)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span id="hostBtnText">Host Login</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="btn-icon mobile-only" aria-label="Open menu" aria-expanded="false">
+          <svg class="menu-bars" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="menu-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FLOATING HOST CONTROL BAR (Visible only when authenticated as Host) -->
+  <aside class="host-admin-bar" id="hostAdminBar" style="display: none;">
+    <div class="admin-bar-content">
+      <div class="admin-status">
+        <span class="admin-pulse"></span>
+        <span class="admin-label">Host Mode: <strong>DHANESHKUMAR S</strong></span>
+        <span class="edit-hint">(Edit text, or upload project images on each card)</span>
+      </div>
+
+      <div class="admin-actions">
+        <button id="saveChangesBtn" class="btn btn-success btn-sm" title="Save all changes to browser">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+          <span>Save Changes</span>
+        </button>
+
+        <button id="previewModeBtn" class="btn btn-secondary btn-sm" title="Preview page as a visitor">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <span id="previewBtnText">Preview as Visitor</span>
+        </button>
+
+        <button id="hostSettingsBtn" class="btn btn-secondary btn-sm" title="Configure SMS Gateway API">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>SMS Gateway</span>
+        </button>
+
+        <button id="resetDefaultsBtn" class="btn btn-outline btn-sm" title="Reset portfolio to initial defaults">
+          <span>Reset</span>
+        </button>
+
+        <button id="hostLogoutBtn" class="btn btn-outline btn-sm" title="Lock and logout">
+          <span>Logout</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background-glow"></div>
+      <div class="container hero-content">
+        
+        <!-- Recruiter Status Badge -->
+        <div class="recruiter-badge">
+          <span class="status-pulse"></span>
+          <span class="badge-text" data-editable="statusBadge">Seeking Aerospace &amp; UAV Engineering Internships</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text" data-editable="heroName">DHANESHKUMAR S</span>
+        </h1>
+        
+        <p class="hero-subtitle" data-editable="heroSubtitle">
+          B.Tech Aerospace Engineering Student at <span class="highlight-text">VIT Bhopal</span>. Passionate about <span class="highlight-text">Autodesk Fusion 360</span>, CAD &amp; 3D modelling, <span class="highlight-text">UAV / Drone design</span>, aerospace engineering fundamentals, and Python scripting.
+        </p>
+
+        <!-- Profile Metrics -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-value" data-editable="metricInstitution">VIT Bhopal</span>
+            <span class="metric-label">Institution</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value" data-editable="metricMajor">Aerospace</span>
+            <span class="metric-label">B.Tech Major</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value" data-editable="metricCad">Fusion 360</span>
+            <span class="metric-label">CAD / 3D Modeling</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value" data-editable="metricFocus">UAV Design</span>
+            <span class="metric-label">Primary Focus</span>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+          <a href="assets/resume.html" target="_blank" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>View Resume</span>
+          </a>
+          <button class="btn btn-outline" id="heroCopyEmail" data-email="[Your Email Address]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy Email</span>
+          </button>
+        </div>
+
+        <!-- Social Links Placeholders -->
+        <div class="hero-socials">
+          <a href="#contact" class="social-link" title="LinkedIn Profile Placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span data-editable="heroLinkedin">[Add LinkedIn]</span>
+          </a>
+          <a href="#contact" class="social-link" title="GitHub / Portfolio Link Placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span data-editable="heroGithub">[Add GitHub/Portfolio]</span>
+          </a>
+          <a href="#contact" class="social-link" title="Email Placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Contact Me</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title" data-editable="aboutHeading">Aerospace Engineering Profile</h2>
+          <p class="section-description" data-editable="aboutSubtitle">Dedicated to applying CAD modeling, UAV design principles, and core aerospace concepts to practical engineering challenges.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 class="feature-title" data-editable="aboutCard1Title">Autodesk Fusion 360 &amp; CAD</h3>
+            <p class="feature-text" data-editable="aboutCard1Text">Skilled in 3D part modeling, parametric assemblies, and design for manufacturing. Experienced in using Autodesk Fusion 360 to model mechanical and aerodynamic components.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.5-6.5l-2.1 2.1m-8.8 8.8l-2.1 2.1m0-13l2.1 2.1m8.8 8.8l2.1 2.1"></path></svg>
+            </div>
+            <h3 class="feature-title" data-editable="aboutCard2Title">UAV &amp; Drone Design</h3>
+            <p class="feature-text" data-editable="aboutCard2Text">Interested in unmanned aerial systems, multirotor airframe architecture, component selection (motors, ESCs, propellers, battery systems), and aerodynamic layout.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <h3 class="feature-title" data-editable="aboutCard3Title">Aerospace Fundamentals &amp; Python</h3>
+            <p class="feature-text" data-editable="aboutCard3Text">Solid academic grounding in aerodynamics, aircraft structures, and propulsion fundamentals, supplemented with basic Python for engineering calculations and data analysis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section bg-alt" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Toolkit</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-description">Core technical capabilities, CAD software, and engineering fundamentals.</p>
+        </div>
+
+        <div class="skills-grid" id="skillsContainer">
+          
+          <!-- CAD & 3D Modelling -->
+          <div class="skills-category-card" data-category-card="cad">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h3 class="category-name" data-editable="skillCat1Name">CAD &amp; 3D Modelling</h3>
+            </div>
+            <div class="pill-group" data-skill-group="cad">
+              <span class="skill-pill" data-editable="skill_cad_1">Autodesk Fusion 360</span>
+              <span class="skill-pill" data-editable="skill_cad_2">3D Part Modelling</span>
+              <span class="skill-pill" data-editable="skill_cad_3">Parametric Design</span>
+              <span class="skill-pill" data-editable="skill_cad_4">Assembly Modelling</span>
+              <span class="skill-pill" data-editable="skill_cad_5">2D Engineering Drawings</span>
+            </div>
+          </div>
+
+          <!-- UAV & Drone Engineering -->
+          <div class="skills-category-card" data-category-card="uav">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.5-6.5l-2.1 2.1m-8.8 8.8l-2.1 2.1m0-13l2.1 2.1m8.8 8.8l2.1 2.1"></path></svg>
+              </div>
+              <h3 class="category-name" data-editable="skillCat2Name">UAV &amp; Drone Design</h3>
+            </div>
+            <div class="pill-group" data-skill-group="uav">
+              <span class="skill-pill" data-editable="skill_uav_1">Drone Airframe Design</span>
+              <span class="skill-pill" data-editable="skill_uav_2">Multirotor Configuration</span>
+              <span class="skill-pill" data-editable="skill_uav_3">Propulsion Sizing</span>
+              <span class="skill-pill" data-editable="skill_uav_4">Motor &amp; Propeller Selection</span>
+              <span class="skill-pill" data-editable="skill_uav_5">Payload Placement</span>
+            </div>
+          </div>
+
+          <!-- Aerospace Engineering Fundamentals -->
+          <div class="skills-category-card" data-category-card="aero">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+              </div>
+              <h3 class="category-name" data-editable="skillCat3Name">Aerospace Fundamentals</h3>
+            </div>
+            <div class="pill-group" data-skill-group="aero">
+              <span class="skill-pill" data-editable="skill_aero_1">Aerodynamics Principles</span>
+              <span class="skill-pill" data-editable="skill_aero_2">Flight Mechanics Basics</span>
+              <span class="skill-pill" data-editable="skill_aero_3">Aircraft Structures Concepts</span>
+              <span class="skill-pill" data-editable="skill_aero_4">Propulsion Fundamentals</span>
+              <span class="skill-pill" data-editable="skill_aero_5">Material Selection</span>
+            </div>
+          </div>
+
+          <!-- Programming & General Tools -->
+          <div class="skills-category-card" data-category-card="tools">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3 class="category-name" data-editable="skillCat4Name">Programming &amp; Tools</h3>
+            </div>
+            <div class="pill-group" data-skill-group="tools">
+              <span class="skill-pill" data-editable="skill_tool_1">Basic Python</span>
+              <span class="skill-pill" data-editable="skill_tool_2">Engineering Calculations</span>
+              <span class="skill-pill" data-editable="skill_tool_3">Technical Documentation</span>
+              <span class="skill-pill" data-editable="skill_tool_4">Git / Version Control Basics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio Work</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-description">CAD and engineering work, beginning with a UAV drone frame modeled in Autodesk Fusion 360. Additional academic projects will be added as they are completed.</p>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1 — UAV Drone Frame Design (CAD) -->
+          <article class="project-card featured-cad" data-id="project1">
+            <div class="project-visual" data-gallery="uav-drone-frame" data-project-gallery="project1">
+              <figure class="gallery-frame gallery-hero" data-image-slot="project1-01" data-default-src="assets/projects/uav-drone-frame/01.jpg">
+                <img
+                  src="assets/projects/uav-drone-frame/01.jpg"
+                  alt="UAV drone frame 3D CAD model in Autodesk Fusion 360"
+                  data-gallery-image
+                >
+                <figcaption class="gallery-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                  <span>Fusion 360 CAD preview</span>
+                  <small>Host Mode: upload a screenshot or render into this slot</small>
+                </figcaption>
+                <div class="host-image-tools">
+                  <button type="button" class="host-upload-btn" data-upload-slot="project1-01">Upload image</button>
+                  <button type="button" class="host-remove-btn" data-remove-slot="project1-01">Remove</button>
+                </div>
+              </figure>
+              <div class="project-gallery" aria-label="UAV drone frame CAD gallery">
+                <div class="gallery-thumb-wrap" data-image-slot="project1-01" data-default-src="assets/projects/uav-drone-frame/01.jpg">
+                  <button type="button" class="gallery-thumb is-active" data-gallery-src="assets/projects/uav-drone-frame/01.jpg" aria-label="CAD view 1">
+                    <span class="gallery-frame">
+                      <img src="assets/projects/uav-drone-frame/01.jpg" alt="" data-gallery-image>
+                      <span class="gallery-placeholder">01</span>
+                    </span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project1-01">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project1-01">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project1-02" data-default-src="assets/projects/uav-drone-frame/02.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/uav-drone-frame/02.jpg" aria-label="CAD view 2">
+                    <span class="gallery-frame">
+                      <img src="assets/projects/uav-drone-frame/02.jpg" alt="" data-gallery-image>
+                      <span class="gallery-placeholder">02</span>
+                    </span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project1-02">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project1-02">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project1-03" data-default-src="assets/projects/uav-drone-frame/03.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/uav-drone-frame/03.jpg" aria-label="CAD view 3">
+                    <span class="gallery-frame">
+                      <img src="assets/projects/uav-drone-frame/03.jpg" alt="" data-gallery-image>
+                      <span class="gallery-placeholder">03</span>
+                    </span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project1-03">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project1-03">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project1-04" data-default-src="assets/projects/uav-drone-frame/04.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/uav-drone-frame/04.jpg" aria-label="CAD view 4">
+                    <span class="gallery-frame">
+                      <img src="assets/projects/uav-drone-frame/04.jpg" alt="" data-gallery-image>
+                      <span class="gallery-placeholder">04</span>
+                    </span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project1-04">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project1-04">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <p class="host-gallery-hint">Host Mode: upload Fusion 360 screenshots or renders into any slot, then click Save Changes.</p>
+            </div>
+
+            <div class="project-header">
+              <div class="project-status" data-editable="p1_status">UAV / CAD / Aerospace Design</div>
+              <div class="project-links">
+                <span class="text-muted" style="font-size: 0.85rem;" data-editable="p1_linkText">CAD Design Project</span>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-editable="p1_title">UAV Drone Frame Design</h3>
+            
+            <p class="project-desc" data-editable="p1_desc">
+              Designed a 3D CAD model of a UAV drone frame using Autodesk Fusion 360. The design focuses on the structural layout of the frame, component mounting, and practical UAV design considerations.
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-editable="p1_h1"><strong>Design Focus:</strong> 3D CAD modeling of the UAV frame structure and component mounting layout in Autodesk Fusion 360.</span>
+              </div>
+              <div class="highlight-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-editable="p1_h2"><strong>Project Scope:</strong> Design-stage CAD work. This is a digital model, not a physically built or flight-tested airframe.</span>
+              </div>
+            </div>
+
+            <div class="project-tags" data-tags-group="p1">
+              <span class="tag" data-editable="p1_tag1">Autodesk Fusion 360</span>
+              <span class="tag" data-editable="p1_tag2">UAV</span>
+              <span class="tag" data-editable="p1_tag3">CAD</span>
+              <span class="tag" data-editable="p1_tag4">Aerospace Design</span>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-text open-modal-btn" data-project="project1">
+                <span>View Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card featured-cad" data-id="project2">
+            <div class="project-visual" data-gallery="cad-component" data-project-gallery="project2">
+              <figure class="gallery-frame gallery-hero" data-image-slot="project2-01" data-default-src="assets/projects/cad-component/01.jpg">
+                <img src="assets/projects/cad-component/01.jpg" alt="CAD component design preview" data-gallery-image>
+                <figcaption class="gallery-placeholder">
+                  <span>Project image preview</span>
+                  <small>Host Mode: upload a CAD screenshot or render</small>
+                </figcaption>
+                <div class="host-image-tools">
+                  <button type="button" class="host-upload-btn" data-upload-slot="project2-01">Upload image</button>
+                  <button type="button" class="host-remove-btn" data-remove-slot="project2-01">Remove</button>
+                </div>
+              </figure>
+              <div class="project-gallery" aria-label="CAD component gallery">
+                <div class="gallery-thumb-wrap" data-image-slot="project2-01" data-default-src="assets/projects/cad-component/01.jpg">
+                  <button type="button" class="gallery-thumb is-active" data-gallery-src="assets/projects/cad-component/01.jpg" aria-label="CAD view 1">
+                    <span class="gallery-frame"><img src="assets/projects/cad-component/01.jpg" alt="" data-gallery-image><span class="gallery-placeholder">01</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project2-01">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project2-01">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project2-02" data-default-src="assets/projects/cad-component/02.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/cad-component/02.jpg" aria-label="CAD view 2">
+                    <span class="gallery-frame"><img src="assets/projects/cad-component/02.jpg" alt="" data-gallery-image><span class="gallery-placeholder">02</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project2-02">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project2-02">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project2-03" data-default-src="assets/projects/cad-component/03.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/cad-component/03.jpg" aria-label="CAD view 3">
+                    <span class="gallery-frame"><img src="assets/projects/cad-component/03.jpg" alt="" data-gallery-image><span class="gallery-placeholder">03</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project2-03">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project2-03">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project2-04" data-default-src="assets/projects/cad-component/04.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/cad-component/04.jpg" aria-label="CAD view 4">
+                    <span class="gallery-frame"><img src="assets/projects/cad-component/04.jpg" alt="" data-gallery-image><span class="gallery-placeholder">04</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project2-04">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project2-04">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <p class="host-gallery-hint">Host Mode: upload project images into any slot, then click Save Changes.</p>
+            </div>
+            <div class="project-header">
+              <div class="project-status" data-editable="p2_status">CAD &amp; 3D Modelling</div>
+              <div class="project-links">
+                <span class="text-muted" style="font-size: 0.85rem;" data-editable="p2_linkText">[Add Link / Render]</span>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-editable="p2_title">[Project Title: 3D CAD Component Design]</h3>
+            
+            <p class="project-desc" data-editable="p2_desc">
+              [Brief summary of an aerospace mechanical component, wing section, or mechanism modeled in Autodesk Fusion 360.]
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-editable="p2_h1"><strong>Modelling Scope:</strong> [e.g., Created parametric 3D parts and assembly with standard fasteners and tolerancing in Fusion 360.]</span>
+              </div>
+              <div class="highlight-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-editable="p2_h2"><strong>Key Outcome:</strong> [e.g., Generated 2D engineering drawings with dimensions and bill of materials (BOM).]</span>
+              </div>
+            </div>
+
+            <div class="project-tags" data-tags-group="p2">
+              <span class="tag" data-editable="p2_tag1">Autodesk Fusion 360</span>
+              <span class="tag" data-editable="p2_tag2">CAD</span>
+              <span class="tag" data-editable="p2_tag3">Assembly</span>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-text open-modal-btn" data-project="project2">
+                <span>View Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card featured-cad" data-id="project3">
+            <div class="project-visual" data-gallery="aerospace-script" data-project-gallery="project3">
+              <figure class="gallery-frame gallery-hero" data-image-slot="project3-01" data-default-src="assets/projects/aerospace-script/01.jpg">
+                <img src="assets/projects/aerospace-script/01.jpg" alt="Aerospace project preview" data-gallery-image>
+                <figcaption class="gallery-placeholder">
+                  <span>Project image preview</span>
+                  <small>Host Mode: upload a screenshot or figure</small>
+                </figcaption>
+                <div class="host-image-tools">
+                  <button type="button" class="host-upload-btn" data-upload-slot="project3-01">Upload image</button>
+                  <button type="button" class="host-remove-btn" data-remove-slot="project3-01">Remove</button>
+                </div>
+              </figure>
+              <div class="project-gallery" aria-label="Aerospace project gallery">
+                <div class="gallery-thumb-wrap" data-image-slot="project3-01" data-default-src="assets/projects/aerospace-script/01.jpg">
+                  <button type="button" class="gallery-thumb is-active" data-gallery-src="assets/projects/aerospace-script/01.jpg" aria-label="Project view 1">
+                    <span class="gallery-frame"><img src="assets/projects/aerospace-script/01.jpg" alt="" data-gallery-image><span class="gallery-placeholder">01</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project3-01">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project3-01">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project3-02" data-default-src="assets/projects/aerospace-script/02.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/aerospace-script/02.jpg" aria-label="Project view 2">
+                    <span class="gallery-frame"><img src="assets/projects/aerospace-script/02.jpg" alt="" data-gallery-image><span class="gallery-placeholder">02</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project3-02">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project3-02">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project3-03" data-default-src="assets/projects/aerospace-script/03.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/aerospace-script/03.jpg" aria-label="Project view 3">
+                    <span class="gallery-frame"><img src="assets/projects/aerospace-script/03.jpg" alt="" data-gallery-image><span class="gallery-placeholder">03</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project3-03">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project3-03">Remove</button>
+                  </div>
+                </div>
+                <div class="gallery-thumb-wrap" data-image-slot="project3-04" data-default-src="assets/projects/aerospace-script/04.jpg">
+                  <button type="button" class="gallery-thumb" data-gallery-src="assets/projects/aerospace-script/04.jpg" aria-label="Project view 4">
+                    <span class="gallery-frame"><img src="assets/projects/aerospace-script/04.jpg" alt="" data-gallery-image><span class="gallery-placeholder">04</span></span>
+                  </button>
+                  <div class="host-image-tools">
+                    <button type="button" class="host-upload-btn" data-upload-slot="project3-04">Upload</button>
+                    <button type="button" class="host-remove-btn" data-remove-slot="project3-04">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <p class="host-gallery-hint">Host Mode: upload project images into any slot, then click Save Changes.</p>
+            </div>
+            <div class="project-header">
+              <div class="project-status" data-editable="p3_status">Aerospace Fundamentals / Python</div>
+              <div class="project-links">
+                <span class="text-muted" style="font-size: 0.85rem;" data-editable="p3_linkText">[Add Code / Document]</span>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-editable="p3_title">[Project Title: Aerospace Calculations or Python Script]</h3>
+            
+            <p class="project-desc" data-editable="p3_desc">
+              [Brief summary of an aerodynamic calculation, flight mechanics analysis, or basic Python script written for an aerospace course or personal study.]
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-editable="p3_h1"><strong>Analytical Scope:</strong> [e.g., Implemented basic Python scripts to calculate atmospheric properties, lift/drag values, or flight parameters.]</span>
+              </div>
+              <div class="highlight-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-editable="p3_h2"><strong>Key Outcome:</strong> [e.g., Plotted and visualized performance curves to evaluate flight envelope characteristics.]</span>
+              </div>
+            </div>
+
+            <div class="project-tags" data-tags-group="p3">
+              <span class="tag" data-editable="p3_tag1">Basic Python</span>
+              <span class="tag" data-editable="p3_tag2">Aerospace Fundamentals</span>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-text open-modal-btn" data-project="project3">
+                <span>View Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section bg-alt" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academics</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-description">Current academic program and relevant aerospace coursework at VIT Bhopal.</p>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-main-info">
+            <div class="edu-degree-header">
+              <div>
+                <h3 class="edu-degree" data-editable="eduDegree">Bachelor of Technology (B.Tech) in Aerospace Engineering</h3>
+                <p class="edu-school" data-editable="eduSchool">VIT Bhopal University (Vellore Institute of Technology, Bhopal)</p>
+              </div>
+              <div class="edu-time-badge">
+                <span class="time-range" data-editable="eduTime">[Expected Graduation: Year]</span>
+                <span class="gpa-pill" data-editable="eduGpa">[CGPA: Add Your CGPA]</span>
+              </div>
+            </div>
+
+            <div class="coursework-container">
+              <h4 class="coursework-title">Relevant Aerospace Coursework:</h4>
+              <div class="coursework-grid" id="courseworkGrid">
+                <div class="course-chip" data-editable="course_1">Aerodynamics</div>
+                <div class="course-chip" data-editable="course_2">Aircraft Flight Mechanics</div>
+                <div class="course-chip" data-editable="course_3">Aircraft Structures</div>
+                <div class="course-chip" data-editable="course_4">Propulsion Systems</div>
+                <div class="course-chip" data-editable="course_5">Engineering Graphics &amp; CAD</div>
+                <div class="course-chip" data-editable="course_6">Engineering Materials</div>
+                <div class="course-chip" data-editable="course_7">Applied Mathematics</div>
+                <div class="course-chip" data-editable="course_8">[Add Other Coursework]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & ACTIVITIES SECTION -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Experience &amp; Activities</span>
+          <h2 class="section-title">Academic, Club &amp; Project Experience</h2>
+          <p class="section-description">Placeholders ready for your real club memberships, aeromodelling teams, workshops, or internship experiences.</p>
+        </div>
+
+        <div class="timeline" id="experienceTimeline">
+          
+          <!-- Experience Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-editable="exp1_role">[Role / Team Member / Project Contributor]</h3>
+                  <div class="timeline-company" data-editable="exp1_company">[University Club / Lab / Academic Project, VIT Bhopal]</div>
+                </div>
+                <span class="timeline-date" data-editable="exp1_date">[Month Year &ndash; Present]</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-editable="exp1_b1">[Describe your specific responsibilities, e.g., Worked on 3D CAD modeling of UAV components using Autodesk Fusion 360.]</li>
+                <li data-editable="exp1_b2">[Describe the technical collaboration, e.g., Collaborated with team members on airframe assembly and weight optimization.]</li>
+                <li data-editable="exp1_b3">[Add any specific tool or methodology applied, e.g., Prepared fabrication files and technical documentation.]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-editable="exp2_role">[Workshop / Competition / Academic Activity]</h3>
+                  <div class="timeline-company" data-editable="exp2_company">[Event, Society, or Coursework Activity Name]</div>
+                </div>
+                <span class="timeline-date" data-editable="exp2_date">[Month Year]</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-editable="exp2_b1">[Describe the activity, e.g., Participated in drone design or aeromodelling workshop / design competition.]</li>
+                <li data-editable="exp2_b2">[Describe what you learned or built, e.g., Learned practical multirotor assembly, ESC calibration, and propeller matching.]</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section bg-alt" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Contact</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">I am actively looking for internship opportunities in Aerospace Engineering, UAV Design, and CAD modeling. Feel free to contact me.</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Direct Contact Information -->
+          <div class="contact-info-card">
+            <h3 class="contact-card-title">Contact Details</h3>
+            <p class="contact-card-text">
+              Reach out for aerospace internships, drone engineering discussions, or CAD modeling opportunities.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">Email</span>
+                  <span class="method-value" id="emailValue" data-editable="contactEmail">[Add Your Email Address]</span>
+                </div>
+                <button class="btn-copy-small" id="copyEmailInline" title="Copy Email" aria-label="Copy Email Address">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">Phone</span>
+                  <span class="method-value" data-editable="contactPhone">+91 9487745720</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">Current University</span>
+                  <span class="method-value" data-editable="contactLocation">VIT Bhopal University, India</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">LinkedIn</span>
+                  <span class="method-value text-muted" data-editable="contactLinkedin">[Add your LinkedIn URL in Edit Mode]</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">GitHub / Portfolio</span>
+                  <span class="method-value text-muted" data-editable="contactGithub">[Add your GitHub URL in Edit Mode]</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-download-box">
+              <div>
+                <strong>Need a printable one-page resume?</strong>
+                <p class="text-muted">Formatted for ATS scanners and PDF export.</p>
+              </div>
+              <a href="assets/resume.html" target="_blank" class="btn btn-sm btn-primary">
+                <span>Open Resume</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Message Form -->
+          <div class="contact-form-card">
+            <h3 class="contact-card-title">Send a Direct Message</h3>
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name / Organization</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. Recruiter / Engineering Manager" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="recruiter@company.com" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject / Opportunity</label>
+                <input type="text" id="subject" name="subject" required placeholder="Aerospace / UAV Internship" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Hi Dhaneshkumar, we would like to discuss an opportunity..." class="form-input"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Send Message via Email</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="brand-name" data-editable="footerName">DHANESHKUMAR S</span> &bull; <span>B.Tech Aerospace Engineering &bull; VIT Bhopal</span>
+      </div>
+      <div class="footer-center">
+        <span>Portfolio tailored for Aerospace &amp; UAV Engineering Internships</span>
+      </div>
+      <div class="footer-right">
+        <button id="footerHostLogin" class="btn-text" style="font-size: 0.8rem; opacity: 0.8;">🔒 Host Login</button>
+        &bull;
+        <a href="#hero" class="back-to-top" title="Back to top">
+          <span>Top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- HOST LOGIN MODAL -->
+  <div class="modal-overlay" id="hostLoginModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container auth-modal-box">
+      <button class="modal-close-btn" id="hostLoginCloseBtn" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Step 1: Mobile Input -->
+      <div class="auth-step" id="authStepPhone">
+        <div class="auth-icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <h2 class="auth-title">Host Mobile Verification</h2>
+        <p class="auth-subtitle">Restricted to <strong>DHANESHKUMAR S</strong>. An OTP will be dispatched exclusively to your registered mobile phone.</p>
+
+        <form id="phoneAuthForm" class="auth-form">
+          <div class="form-group">
+            <label for="hostMobileInput">Authorized Mobile Number</label>
+            <div class="phone-input-wrap">
+              <span class="country-prefix">+91</span>
+              <input type="tel" id="hostMobileInput" required placeholder="9487745720" value="9487745720" class="form-input phone-field" maxlength="10">
+            </div>
+            <span class="input-helper">Authorized host number: +91 9487745720</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="sendOtpBtn">
+            <span>Dispatch OTP to My Mobile</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: OTP Verification (NO on-screen OTP leak, strictly on mobile device) -->
+      <div class="auth-step" id="authStepOtp" style="display: none;">
+        <div class="auth-icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h2 class="auth-title">Enter Mobile OTP</h2>
+        <p class="auth-subtitle">A secure 6-digit verification code has been dispatched to your mobile phone: <strong id="displayMobileTarget">+91 9487745720</strong>.</p>
+
+        <!-- Direct Push Notification Link for Fast Mobile Delivery -->
+        <div class="mobile-delivery-status" id="mobileDeliveryStatus">
+          <div class="delivery-badge">
+            <span class="status-dot"></span>
+            <span>OTP sent to your mobile</span>
+          </div>
+          <p class="delivery-instructions">Please check your phone's notifications or messages. You can also tap below to open the mobile verification push directly on your device:</p>
+          <a id="mobilePushDirectLink" href="#" target="_blank" class="btn btn-secondary btn-sm btn-block mobile-push-btn">
+            <span>📲 Open Notification on Mobile (+91 9487745720)</span>
+          </a>
+        </div>
+
+        <form id="otpAuthForm" class="auth-form" style="margin-top: 18px;">
+          <div class="form-group">
+            <label for="otpDigitInput">Enter the 6-Digit Code Received on Your Phone</label>
+            <input type="text" id="otpDigitInput" required placeholder="• • • • • •" class="form-input otp-field" maxlength="6" autocomplete="one-time-code">
+          </div>
+
+          <div class="auth-form-buttons">
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Verify Code &amp; Unlock Edit Mode</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-block" id="resendOtpBtn">
+              <span>Resend OTP to +91 9487745720</span>
+            </button>
+            <button type="button" class="btn btn-text btn-block" id="backToPhoneBtn">
+              <span>&larr; Back</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOST SMS GATEWAY SETTINGS MODAL -->
+  <div class="modal-overlay" id="hostSettingsModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container auth-modal-box">
+      <button class="modal-close-btn" id="hostSettingsCloseBtn" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="auth-step">
+        <div class="auth-icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </div>
+        <h2 class="auth-title">SMS Gateway Configuration</h2>
+        <p class="auth-subtitle">Configure direct telecom operator SMS delivery to <strong>+91 9487745720</strong>.</p>
+
+        <form id="hostSettingsForm" class="auth-form">
+          <div class="form-group">
+            <label for="settingsMobile">Authorized Host Mobile</label>
+            <input type="tel" id="settingsMobile" required class="form-input" maxlength="10" value="9487745720">
+          </div>
+
+          <div class="form-group">
+            <label for="settingsFast2smsKey">Fast2SMS API Key (Optional for Indian Telecom SMS)</label>
+            <input type="password" id="settingsFast2smsKey" class="form-input" placeholder="Paste Fast2SMS API Key">
+            <span class="input-helper">If provided, OTP will be sent directly via Fast2SMS telecom network.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Save SMS Gateway Settings</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamically injected by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastNotification" role="alert" aria-live="polite">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMessage">Changes saved successfully!</span>
+  </div>
+
+  <input type="file" id="hostProjectImageInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+
+  <script src="script.js"></script>
+</body>
+</html>
