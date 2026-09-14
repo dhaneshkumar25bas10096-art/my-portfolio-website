@@ -1,61 +1,32 @@
-# 🚀 DHANESHKUMAR S — Aerospace Engineering Portfolio with Host CMS
+# React + TypeScript + Vite
 
-A modern, responsive portfolio website tailored for **DHANESHKUMAR S**, a **B.Tech Aerospace Engineering student at VIT Bhopal**, featuring a secure **Host Mobile Login** system that allows only the host to edit information directly in the browser.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
----
+Currently, two official plugins are available:
 
-## 🔒 Host Login & Live Editing (CMS)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-Only the verified host can edit personal details, email, CGPA, skills, projects, and contact information.
+## React Compiler
 
-### Host Credentials:
-- **Authorized Mobile Number**: `9487745720` (India: `+91 9487745720`)
-- **Master Security PIN**: `123456`
-- **Instant OTP**: When you enter your number, a 6-digit random OTP is generated with a 1-click **Auto-Fill** button.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### How to Log In & Edit:
-1. Click the **"Host Login"** button in the top navigation bar or the footer.
-2. Enter your registered mobile number (`9487745720`) and click **Send Verification OTP**.
-3. Enter the 6-digit OTP (or click **Auto-Fill**, or enter Master PIN `123456`) and click **Verify**.
-4. **Host Edit Mode Unlocked**:
-   - The floating **Host Admin Dock** appears at the bottom of the screen.
-   - Click on any text (Name, Subtitle, Skills, Projects, CGPA, Coursework, Email, etc.) to type and edit directly.
-   - Click **Save Changes** in the dock to permanently save your updates to browser storage.
-   - Click **Preview as Visitor** to see how recruiters view your website without editing outlines.
-   - Click **Security Settings** if you wish to change your registered mobile number or master PIN.
-   - Click **Logout** when finished to lock the page back to read-only mode.
+## Expanding the Oxlint configuration
 
----
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-## 📄 Live Resume Synchronization
-
-Whenever you edit your details (Name, Email, CGPA, Education, Projects) on the homepage and click **Save Changes**, opening [`assets/resume.html`](assets/resume.html) automatically loads and displays your updated details in the ATS-printable layout!
-
----
-
-## ⚡ How to Preview Locally
-
-The local server is already running on port 8000:
-👉 **[http://localhost:8000](http://localhost:8000)**
-
-To run manually using Python anytime:
-```powershell
-cd "C:\Users\Acer\.gemini\antigravity\scratch\internship-portfolio"
-python -m http.server 8000
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
 ```
 
----
-
-## 🌐 Free 3-Minute Deployment to GitHub Pages
-1. Create a repository on [GitHub](https://github.com) named `aerospace-portfolio` (or `your-username.github.io`).
-2. Run in PowerShell:
-   ```powershell
-   git init
-   git add .
-   git commit -m "Launch Dhaneshkumar S Aerospace Portfolio with Host CMS"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo>.git
-   git push -u origin main
-   ```
-3. In GitHub repo **Settings** $\rightarrow$ **Pages**, set source to `main` branch root `/`.
-4. Your website is live worldwide!
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

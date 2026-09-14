@@ -1,0 +1,376 @@
+/* ==========================================================================
+   Aerospace Engineering Design System (Futuristic Light Theme)
+   CFD Wind Tunnel & Aerodynamics Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Futuristic Light Color Tokens */
+  --bg-primary: #f8fafc;        /* Crisp off-white aero base */
+  --bg-secondary: #f1f5f9;      /* Technical panel backing */
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-hover: rgba(255, 255, 255, 0.96);
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  --bg-subtle-glow: radial-gradient(circle at 50% 30%, rgba(6, 182, 212, 0.07) 0%, rgba(248, 250, 252, 0) 70%);
+
+  /* Hairline Aerospace Borders */
+  --border-hairline: rgba(15, 23, 42, 0.08);
+  --border-tech: rgba(37, 99, 235, 0.18);
+  --border-active: #0284c7;
+  --border-hud: rgba(6, 182, 212, 0.4);
+
+  /* Typography */
+  --text-main: #0f172a;         /* High-contrast technical slate */
+  --text-secondary: #334155;    /* Body paragraph slate */
+  --text-muted: #64748b;        /* Muted metadata */
+  --text-faint: #94a3b8;        /* Hairline markers */
+
+  /* CFD Pressure-Gradient Colormap (Deep Blue -> Cyan -> Emerald -> Yellow -> Orange -> Red) */
+  --cfd-blue: #1d4ed8;
+  --cfd-cyan: #06b6d4;
+  --cfd-emerald: #10b981;
+  --cfd-yellow: #eab308;
+  --cfd-orange: #f97316;
+  --cfd-red: #ef4444;
+
+  --grad-cfd: linear-gradient(90deg, #1d4ed8 0%, #06b6d4 25%, #10b981 50%, #eab308 72%, #f97316 88%, #ef4444 100%);
+  --grad-cfd-vertical: linear-gradient(180deg, #ef4444 0%, #f97316 20%, #eab308 40%, #10b981 65%, #06b6d4 85%, #1d4ed8 100%);
+  --grad-hud-glow: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  --grad-text: linear-gradient(135deg, #0f172a 30%, #2563eb 80%, #06b6d4 100%);
+
+  /* Shadows & Atmospheric Elevation */
+  --shadow-subtle: 0 2px 10px rgba(15, 23, 42, 0.04);
+  --shadow-elevation: 0 10px 30px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+  --shadow-aero: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
+  --shadow-cfd-glow: 0 0 25px rgba(6, 182, 212, 0.22);
+
+  /* Fonts */
+  --font-display: 'Outfit', 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+  --font-handwritten: 'Caveat', cursive, -apple-system, sans-serif;
+
+  /* Sizing & Global Motion Tokens */
+  --max-width: 1240px;
+  --hud-height: 48px;
+  --nav-height: 68px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  /* Motion Tokens (Spec Section 0) */
+  --ease-flight: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-linear-flow: linear;
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-aero: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-micro: 150ms;
+  --dur-fast: 400ms;
+  --dur-mid: 900ms;
+  --dur-slow: 2200ms;
+
+  --color-pressure-low: #3b82f6;
+  --color-pressure-mid1: #22c55e;
+  --color-pressure-mid2: #eab308;
+  --color-pressure-high: #ef4444;
+  --color-particle-ambient: rgba(255, 255, 255, 0.6);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + var(--hud-height) + 16px);
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Technical Wind Tunnel Grid Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Aerodynamic Streamline Ambient Glow */
+body::after {
+  content: "";
+  position: fixed;
+  top: 10%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, rgba(37, 99, 235, 0.03) 45%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 90px 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.telemetry-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 14px;
+  background: rgba(2, 132, 199, 0.06);
+  color: #0284c7;
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: var(--radius-full);
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+}
+
+.section-subtitle {
+  max-width: 650px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* CFD Gradient Accents */
+.cfd-gradient-bar {
+  height: 4px;
+  width: 100%;
+  background: var(--grad-cfd);
+  border-radius: 2px;
+}
+
+.gradient-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.cfd-text-gradient {
+  background: var(--grad-cfd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Futuristic Light Glass Card */
+.aero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s var(--ease-aero);
+  position: relative;
+  overflow: hidden;
+}
+
+.aero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.aero-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-tech);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevation), var(--shadow-aero);
+}
+
+.aero-card:hover::before {
+  opacity: 1;
+}
+
+/* Aerospace Technical Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-aero);
+  border: 1px solid transparent;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #1e293b;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+}
+
+.btn-primary:hover {
+  background: #1e293b;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.28);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-cfd {
+  background: var(--grad-cfd);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(6, 182, 212, 0.35);
+  border: none;
+}
+
+.btn-cfd:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 8px 26px rgba(239, 68, 68, 0.4);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: rgba(2, 132, 199, 0.4);
+  color: #0284c7;
+  transform: translateY(-2px);
+}
+
+/* Telemetry Badge */
+.spec-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  background: #f1f5f9;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Custom Scrollbar (Clean Engineering Style) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Pulsing HUD Markers */
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes vortexDrift {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-6px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0px) rotate(360deg); opacity: 0.7; }
+}
+
+@keyframes streamlineFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

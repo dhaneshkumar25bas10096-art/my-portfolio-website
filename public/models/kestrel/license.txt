@@ -1,0 +1,11 @@
+Model Information:
+* title:	American Kestrel - in Flight
+* source:	https://sketchfab.com/3d-models/american-kestrel-in-flight-befbb2c422fc4b92aecae8c5114967e9
+* author:	osuecampus (https://sketchfab.com/osuecampus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "American Kestrel - in Flight" (https://sketchfab.com/3d-models/american-kestrel-in-flight-befbb2c422fc4b92aecae8c5114967e9) by osuecampus (https://sketchfab.com/osuecampus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
