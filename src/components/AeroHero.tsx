@@ -267,7 +267,7 @@ export const AeroHero: React.FC<AeroHeroProps> = ({ onOpenModelModal }) => {
             <div className="ref-portrait-container">
               <div className="ref-portrait-wrapper">
                 <img
-                  src="/images/dhanush.png"
+                  src="/images/gibili.png"
                   alt="Dhaneshkumar S"
                   className="ref-portrait-img"
                 />

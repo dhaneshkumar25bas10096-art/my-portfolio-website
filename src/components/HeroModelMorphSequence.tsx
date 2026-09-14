@@ -60,11 +60,12 @@ export const MODEL_STAGES: ModelStageConfig[] = [
     id: 'vintage',
     name: 'Vintage Propeller Plane (1903)',
     order: '03 / 04',
-    // Uses procedural createVintageBiplaneMesh() — no modelPath
+    // Real Wright Flyer GLTF — original textures and colors preserved
+    modelPath: '/models/first_flight/scene.gltf',
     flowCharacter: 'Rough',
     streamlineColor: new THREE.Color(0.75, 0.55, 0.10), // warm ochre / vintage gold
     targetScale: 2.9,
-    rotOffset: new THREE.Euler(0.12, 0, -0.14),
+    rotOffset: new THREE.Euler(0.08, Math.PI / 2, -0.10), // orient nose leftward toward portrait
     telemetry: { lift: '+ 1.48', drag: '0.45', aoa: '5.1°' },
   },
   {
@@ -576,13 +577,8 @@ export const HeroModelMorphSequence: React.FC<HeroModelMorphSequenceProps> = ({
     // Stage 1: Paper Airplane (GLTF)
     loadGLTFStage(1, false);
 
-    // Stage 2: High-Quality Solid 1903 Vintage Propeller Plane (procedural Wright Flyer)
-    const biplane = createVintageBiplaneMesh();
-    alignModelLeftward(biplane.group, MODEL_STAGES[2].targetScale, MODEL_STAGES[2].rotOffset);
-    biplane.group.visible = false;
-    stageModels[2] = biplane.group;
-    stageVertexClouds[2] = biplane.vertices;
-    scene.add(biplane.group);
+    // Stage 2: Real 1903 Wright Flyer GLTF (original colors/textures)
+    loadGLTFStage(2, false);
 
     // Stage 3: Modern Drone (MQ-9 Reaper GLTF)
     loadGLTFStage(3, false);
